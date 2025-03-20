@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,6 @@ import {
   Sparkles
 } from "lucide-react";
 
-// Mock data for profiles
 const mockProfiles: Profile[] = [
   {
     id: "1",
@@ -61,7 +59,6 @@ const mockProfiles: Profile[] = [
   },
 ];
 
-// Mock data for matches
 const mockMatches = [
   {
     id: "4",
@@ -81,7 +78,6 @@ const mockMatches = [
   },
 ];
 
-// Mock data for upcoming video calls
 const mockVideoCalls = [
   {
     id: "6",
@@ -121,7 +117,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen flex">
-      {/* Sidebar */}
       <div className="w-20 md:w-64 border-r bg-sidebar flex flex-col">
         <div className="p-4 flex items-center justify-center md:justify-start border-b">
           <Heart className="h-8 w-8 text-cupid-500 md:mr-3" />
@@ -208,9 +203,7 @@ const Dashboard = () => {
         </div>
       </div>
       
-      {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Header */}
         <header className="h-16 border-b flex items-center justify-between px-4">
           <h1 className="text-xl font-semibold">
             {currentTab === "discover" && "Discover"}
@@ -231,7 +224,6 @@ const Dashboard = () => {
           </div>
         </header>
         
-        {/* Content */}
         <main className="flex-1 p-6 overflow-auto">
           {inVideoCall && activeProfile ? (
             <div>
@@ -358,7 +350,7 @@ const Dashboard = () => {
                             <p className="font-medium">Weekday Evenings</p>
                             <p className="text-sm text-muted-foreground">7:00 PM - 9:00 PM</p>
                           </div>
-                          <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">
+                          <Badge variant="success">
                             High Availability
                           </Badge>
                         </div>
@@ -367,7 +359,7 @@ const Dashboard = () => {
                             <p className="font-medium">Weekend Afternoons</p>
                             <p className="text-sm text-muted-foreground">2:00 PM - 5:00 PM</p>
                           </div>
-                          <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">
+                          <Badge variant="success">
                             High Availability
                           </Badge>
                         </div>
@@ -376,7 +368,7 @@ const Dashboard = () => {
                             <p className="font-medium">Sunday Evenings</p>
                             <p className="text-sm text-muted-foreground">6:00 PM - 8:00 PM</p>
                           </div>
-                          <Badge className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100">
+                          <Badge variant="warning">
                             Medium Availability
                           </Badge>
                         </div>
