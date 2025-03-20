@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import ProfileCard, { Profile } from "@/components/ProfileCard";
 import VideoCallCard from "@/components/VideoCallCard";
 import AIAssistant from "@/components/AIAssistant";
