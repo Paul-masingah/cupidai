@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar } from "@/components/ui/avatar";
@@ -11,7 +12,8 @@ import {
   Calendar, 
   Search, 
   Users,
-  Sparkles
+  Sparkles,
+  Settings
 } from "lucide-react";
 
 interface DashboardSidebarProps {
@@ -25,6 +27,8 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
   setCurrentTab,
   setShowAIAssistant,
 }) => {
+  const navigate = useNavigate();
+  
   return (
     <div className="w-20 md:w-64 border-r bg-sidebar flex flex-col">
       <div className="p-4 flex items-center justify-center md:justify-start border-b">
@@ -99,12 +103,21 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       
       <div className="p-4 border-t">
         <div className="flex items-center">
-          <Avatar className="h-10 w-10 mr-3">
+          <Avatar className="h-10 w-10 mr-3 cursor-pointer" onClick={() => navigate("/settings")}>
             <User className="h-5 w-5" />
           </Avatar>
           <div className="hidden md:block">
             <p className="text-sm font-medium">Your Profile</p>
-            <p className="text-xs text-muted-foreground">View and edit</p>
+            <div className="flex items-center">
+              <Button 
+                variant="link" 
+                className="h-auto p-0 text-xs text-muted-foreground hover:text-primary"
+                onClick={() => navigate("/settings")}
+              >
+                Settings
+                <Settings className="ml-1 h-3 w-3" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
